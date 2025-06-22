@@ -1,0 +1,39 @@
+# Node.js / Angular
+node_modules/
+dist/
+.env
+
+# Angular build artifacts
+.angular/
+*.log
+
+# ASP.NET / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SQL Server backup files
+*.bak
+*.mdf
+*.ldf
+
+# Docker
+**/sqlserver-data/
+docker-compose.override.yml
+
+# Visual Studio Code
+.vscode/
+
+# Build results
+wwwroot/

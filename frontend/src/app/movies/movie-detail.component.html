@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <button (click)="goToCatalog()" class="btn">Menú principal</button>  <!-- Al hacer clic, se ejecuta la función goToCatalog() para volver al menú principal -->
+</nav>
+
+<div class="content" *ngIf="movie as m"> <!-- Contenido principal que se muestra solo si la película está cargada -->
+  <img [src]="'assets/' + m.image" [alt]="m.name" />  <!-- Imagen de la película -->
+  
+   <!-- Sección de descripción detallada -->
+  <div class="description">
+    <h1>{{ m.name }}</h1>
+    <p>{{ m.description }}</p>
+
+    <!-- Ficha técnica con detalles adicionales -->
+    <h2>Ficha técnica</h2>
+    <ul>
+      <li><strong>Director:</strong> {{ m.director }}</li>
+      <li><strong>Casting principal:</strong> {{ m.cast }}</li>
+      <li><strong>Fecha de lanzamiento:</strong> {{ m.releaseDate }}</li>
+    </ul>
+  </div>
+</div>
+
+<h3 *ngIf="suggestions.length > 0">Te podría gustar</h3> <!-- Muestra si hay sugerencias de películas -->
+<div class="section"> <!-- Sección de películas sugeridas -->
+  <div class="card" *ngFor="let m of suggestions">   <!-- Recorre cada película sugerida y crea una tarjeta -->
+    <img [src]="'assets/' + m.image" [alt]="m.name" /> <!-- Imagen de la película sugerida -->
+    <button (click)="seeDetails(m)" class="btn">Ver / Más información</button> <!-- Botón para ir al detalle de la película sugerida -->
+  </div>
+</div>

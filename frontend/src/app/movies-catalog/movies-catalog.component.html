@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <button (click)="loadMovies()" class="btn">Menú principal</button> <!-- Recarga el listado completo de películas desde la API -->
+  <button (click)="showFavorites()" class="btn">Ver favoritos</button>   <!-- Muestra únicamente las películas marcadas como favoritas -->
+  <button (click)="restoreHiddenMovies()" class="btn">Restaurar ocultos</button>   <!-- Restaura las películas que han sido ocultadas por el usuario -->
+</nav> 
+
+<div *ngIf="notificationMessage" class="notification"> <!-- Notificación para mostrar mensajes al usuario (como confirmaciones) -->
+  {{ notificationMessage }}
+</div>
+
+<!-- Contenedor principal de las tarjetas de películas -->
+<div class="movies">
+  <div class="movie" *ngFor="let movie of movies"> <!-- Itera sobre cada película disponible en la lista -->
+     <img [src]="'assets/' + movie.image" [alt]="movie.name" />  <!-- Muestra la imagen de la película -->
+
+    <strong>{{ movie.name }}</strong> <!-- Nombre de la película -->
+    <p>{{ movie.description }}</p> <!-- Descripción breve de la película -->
+
+      <!-- Sección de botones para interactuar con la película -->
+      <div class="actions">
+      <button (click)="seeDetails(movie)" class="btn">Ver / Más información</button> <!-- Redirige a la vista de detalles de la película -->
+
+      <!-- Añade o quita la película de favoritos. El botón cambia de estilo si ya es favorita -->
+      <button (click)="toggleFavorite(movie.id)" 
+              [ngClass]="{ added: movie.isFavorite }"
+              class="btnFavorite">
+          {{ movie.isFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos' }}
+      </button>
+
+      <!-- Solo se muestra si la película no es favorita.Permite ocultarla de la lista principal -->
+      <button *ngIf="!movie.isFavorite"
+              (click)="hideMovie(movie.id)" class="btn btnHide">
+        Ocultar película
+      </button>
+    </div>
+  </div>
+</div>

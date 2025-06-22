@@ -1,0 +1,5 @@
+$env:ConnectionStrings__DefaultConnection = "Server=localhost;Database=LoginApp;Trusted_Connection=True;TrustServerCertificate=True;"
+$env:Jwt__Key = "A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6"
+$env:Jwt__Issuer = "movieshub"
+$env:Jwt__Audience = "movieshub_users"
+Write-Host "Variables definidas correctamente."
