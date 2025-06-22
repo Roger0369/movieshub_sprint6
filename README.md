@@ -70,7 +70,7 @@ Creacion de Docker files para ApiPeliculas y frontend, asi como de la imagen SQL
 ### Configuración de CORS
 
 - Se habilitó **CORS** en el backend para permitir solicitudes desde Angular (`http://localhost:4200`).
-- Esto resolvió errores de tipo `CORS policy blocked`.
+- Esto resolvió errores de tipo `CORS policy blocked`.   
 ![Texto alternativo](img_Readme/cors.png)
 
 ## 5. Diagrama de Entidad-Relación de la Base de Datos
@@ -157,6 +157,7 @@ dotnet run
 ```
 
 El backend se ejecutará en http://localhost:5291
+--
 
 ### Ejecutar el Frontend (login-frontend)
 Abre otra terminal y navega a la carpeta login-frontend/.
