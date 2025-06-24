@@ -189,7 +189,7 @@ export const environment = {
 
 ### Inicia sesión con el siguiente usuario de prueba:
 
-Una vez ejecutado el fornt en la pagina de login ingresa la informacion correspondiente:
+Una vez ejecutado el frontend en la pagina de login ingresa la informacion correspondiente:
 
 - Usuario: admin     
 - Contraseña: pass1
